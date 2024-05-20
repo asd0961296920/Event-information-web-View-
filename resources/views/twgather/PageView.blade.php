@@ -34,90 +34,18 @@
 
 
   <script>
-    // $(document).ready(function() {
-    // // 获取 URL 中的 moth 参数值
-    // const urlParams = new URLSearchParams(window.location.search);
-    // const mothValue = urlParams.get('moth');
+    $(document).ready(function() {
 
-    // if (mothValue !== null) {
-    //     // 遍历 select 元素的选项
-    //     $('#month option').each(function() {
-    //         if ($(this).val() === mothValue) {
-    //             // 设置与 moth 相同的选项为 selected
-    //             $(this).prop('selected', true);
-    //         }
-    //     });
-    // }
-    //     // 获取 URL 中的 moth 参数值
-    //     const urlParams2 = new URLSearchParams(window.location.search);
-    // const mothValue2 = urlParams2.get('year');
+      $('#search').on('click', function() {
 
-    // if (mothValue !== null) {
-    //     // 遍历 select 元素的选项
-    //     $('#year option').each(function() {
-    //         if ($(this).val() === mothValue2) {
-    //             // 设置与 moth 相同的选项为 selected
-    //             $(this).prop('selected', true);
-    //         }
-    //     });
-    // }
-    // function getQueryParam(param) {
-    //             var urlParams = new URLSearchParams(window.location.search);
-    //             return urlParams.get(param);
-    //         }
-    //         const keyword = getQueryParam('keyword');
-    //         $('#searchinput').val(keyword);
+                var value =$('#searchinput').val();
+                var currentUrl = window.location.href;
+                var url = new URL(currentUrl);
 
+                window.location.href = url.origin +"{{ env('HOME_URL') }}"+ "?keyword=" + value;
+      });
 
-    //   $('#year').change(function() {
-    //     var selectedValue = $(this).val();
-    //     var select1Value = $('#month').val();
-    //     var select2Value = $('#search').val();
-    //     var url = $(location).attr('origin') + window.location.pathname+ "?year=" + selectedValue+ "&moth="+select1Value;
-    //     var search = getQueryParam('keyword');
-    //     if(search !==null && search !== ""){
-    //       url = url+"&keyword="+search
-    //     }
-
-    //     window.location.href = url;
-    //   });
-    //   $('#month').change(function() {
-    //     var selectedValue = $(this).val();
-    //     var select1Value = $('#year').val();
-    //     var select2Value = $('#search').val();
-    //     var url =  $(location).attr('origin') + window.location.pathname + "?year=" + select1Value+ "&moth="+selectedValue;
-    //     var search = getQueryParam('keyword');
-    //     if(search !==null && search !== ""){
-    //       url = url+"&keyword="+search
-    //     }
-    //     window.location.href = url;
-
-    //   });
-
-    //   $('.myButton').on('click', function() {
-    //     var selectedValue = $('#month').val();
-    //     var select1Value = $('#year').val();
-    //     var select2Value = $('#search').val();
-    //             var value = $(this).val();
-    //             var url =  $(location).attr('origin') + window.location.pathname+ "?year=" + select1Value+ "&moth="+selectedValue+ "&page="+value;
-    //             var search = getQueryParam('keyword');
-    //             if(search !==null && search !== ""){
-    //               url = url+"&keyword="+search
-    //             }
-
-
-    //             window.location.href = url;
-    //   });
-
-    //   $('#search').on('click', function() {
-
-    //             var value =$('#searchinput').val();
-
-
-    //             window.location.href = $(location).attr('origin') + window.location.pathname + "?keyword=" + value;
-    //   });
-
-    // });
+    });
   </script>
 
 
@@ -150,8 +78,8 @@
 
       </ul>
       <div class="d-flex">
-        <!-- <input class="form-control me-2" id="searchinput" type="search" placeholder="請輸入關鍵字" aria-label="Search" id="search">
-        <button class="btn btn-outline-success" type="button" id="search">查詢</button> -->
+        <input class="form-control me-2" id="searchinput" type="search" placeholder="請輸入關鍵字" aria-label="Search" id="search">
+        <button class="btn btn-outline-success" type="button" id="search">查詢</button>
       </div>
     </div>
   </div>
