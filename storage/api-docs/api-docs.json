@@ -1,0 +1,86 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "OpenAPI",
+        "description": "This is description",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "",
+            "description": "測試環境"
+        },
+        {
+            "url": "http://127.0.0.1:8000",
+            "description": "本機環境"
+        }
+    ],
+    "paths": {
+        "/v1/example/data": {
+            "get": {
+                "tags": [
+                    "Example"
+                ],
+                "summary": "取得資料",
+                "operationId": "dbe22cb45d1128a22091fe57fcb0e1aa",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "資料編號",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "userId": {
+                                            "description": "使用者編號",
+                                            "type": "integer"
+                                        },
+                                        "id": {
+                                            "description": "資料編號",
+                                            "type": "integer"
+                                        },
+                                        "title": {
+                                            "description": "標題",
+                                            "type": "string"
+                                        },
+                                        "completed": {
+                                            "description": "是否完成",
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "userId": 1,
+                                    "id": 1,
+                                    "title": "delectus aut autem",
+                                    "completed": false
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "Authorization": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {},
+        "examples": {},
+        "securitySchemes": {}
+    }
+}
