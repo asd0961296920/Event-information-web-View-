@@ -21,3 +21,5 @@ Route::get('/', [HomeController::class, 'home']);
 Route::get('/city/{id}', [CityController::class, 'home']);
 
 Route::get('/page/{id}', [PageController::class, 'home']);
+
+Route::get('/image', [HomeController::class, 'image']);

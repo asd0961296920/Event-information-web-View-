@@ -5,6 +5,7 @@ use App\Api\Api;
 use Illuminate\Http\Request;
 use App\Services\IslandService;
 use DateTime;
+use Illuminate\Support\Facades\Response;
 class HomeController extends Controller
 {
     public function home(Request $request)
@@ -84,5 +85,23 @@ class HomeController extends Controller
     }
 
 
+    public function image()
+    {
+        $path = public_path('cc.jpg');
+
+        // 檢查圖片是否存在
+        if (!file_exists($path)) {
+            abort(404);
+        }
+
+        // 取得圖片內容
+        $file = file_get_contents($path);
+
+        // 建立響應並返回圖片內容
+        return Response::make($file, 200, [
+            'Content-Type' => 'image/jpeg',
+            'Content-Disposition' => 'inline; filename="example.jpg"',
+        ]);
+    }
 
 }

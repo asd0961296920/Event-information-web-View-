@@ -16,7 +16,7 @@
 
     <meta property="og:title" content="{{$title}} - 首頁">
     <meta property="og:description" content="歡迎來到我們的網站，我們有全台灣最全最新的旅遊活動。 無論您是喜歡健行山林、探索古鎮、品嚐美食，還是享受海灘風光，我們都有您心儀的活動。 即時更新的活動訊息，讓您隨時掌握最新動態，輕鬆規劃行程。">
-    <meta property="og:image" content="https://twgather.techscomet.com/cc.jpg">
+    <meta property="og:image" content="https://twgather.techscomet.com/image">
     <meta property="og:url" content="https://twgather.techscomet.com">
     <meta property="og:type" content="全台灣即時活動">
 

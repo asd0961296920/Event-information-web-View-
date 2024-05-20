@@ -16,7 +16,7 @@
 
     <meta property="og:title" content="{{$city}}最新活動資訊 - {{$title}}">
     <meta property="og:description" content="{{$city}}最新活動資訊 - {{$title}}">
-    <meta property="og:image" content="https://twgather.techscomet.com/cc.jpg">
+    <meta property="og:image" content="https://twgather.techscomet.com/image">
     <meta property="og:url" content="{{$url}}">
     <meta property="og:type" content="{{$city}}最新活動資訊">
 
